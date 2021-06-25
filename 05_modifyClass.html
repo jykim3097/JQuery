@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 제어 함수(3)</title>
+    
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <h3>클래스 제어 addClass, removeClass, toggleClass</h3>
+    <button id="btn" class="btn btn-default">클래스 조작 확인</button>
+
+    <h3>토글 방식</h3>
+    <button id="toggle" class="dark">토글</button>
+
+    <script>
+        // 클래스 추가 - js
+        document.getElementById("btn").classList.add("myBtn");
+
+        // 클래스 추가 - jquery
+        $("#btn").addClass("myBtn2");
+
+        // 클래스 제거 - js
+        document.getElementById("btn").classList.remove("myBtn");
+
+        // 클래스 제거 - jquery
+        $("#btn").removeClass("myBtn2");
+
+        // 토글 방식 - 순수 js
+        var toggle = document.getElementById("toggle");
+        toggle.onclick = function() {
+            toggle.classList.toggle("light");
+        }
+
+        // 토글 방식 - jquery와 js 혼용
+        toggle.onclick = function() {
+            $("#toggle").toggleClass("bbb");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ready 함수</title>
+
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <h3>window.onload vs. document.ready</h3>
+
+    <script>
+        // 한 번만 사용할 수 있는 window.onload
+        window.onload = function() {
+            document.getElementById("btn").onclick = function() {
+                alert("실행됨");
+            }
+        }
+
+        // 여러 번 사용할 수 있는 ready
+        $(document).ready(function() {
+            document.getElementById("btn").onclick = function() {
+                alert("실행됨2");
+                alert("실행됨3")
+            };
+        });
+
+        $(document).ready(function() {
+            alert(1);
+        })
+    </script>
+
+    <button type="button" id="btn">이벤트 버튼</button>
+
+</body>
+</html>

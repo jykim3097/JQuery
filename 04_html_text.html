@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자 조작 html과 text 함수</title>
+    
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <h3>innerHTML과 jquery html()</h3>
+
+    <div class="test"></div>
+    <div class="test2"></div>
+    <div class="test-html"></div>
+
+    <script>
+        // js
+        document.querySelector(".test").innerHTML = "<a href='#'>kkk</a>";
+
+        // jquery
+        $(".test2").html("<a href='#'>hhh</a>");
+        $(".test2").html("");
+        $(".test2").html("홍길동");
+
+        // 값 얻기
+        console.log($(".test").html());
+
+        // 순수 문자열 입력 text()
+        $(".test-html").text("<a href='#''>kkk</a>");
+
+    </script>
+
+</body>
+</html>

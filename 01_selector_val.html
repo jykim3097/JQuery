@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자와 val 함수</title>
+
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <input type="text" id="apple" value="홍길동"><br>
+    <input type="text" class="melon" value="김길동"><br>
+    <input type="hidden" value="이순신"><br>
+
+    <script>
+        // 태그 출력 - js
+        console.log(document.getElementById("apple"));
+
+        // 태그 출력 - jquery
+        console.log($("#apple")); // 배열 출력
+        console.log($("#apple")[0]); // 인덱스로 접근
+
+        // value 함수 - js
+        console.log(document.querySelector(".melon").value);
+
+        // value 함수 - jquery
+        console.log($(".melon").val()); 
+
+        // jquery의 값 변경
+        console.log("원래 값:", $("input[type=hidden").val());
+        $("input[type=hidden]").val("신사임당");
+        console.log("변경된 값:", $("input[type=hidden]").val());
+
+    </script>
+
+
+</body>
+</html>

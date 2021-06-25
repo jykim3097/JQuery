@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 위임</title>
+            
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <h3>li 태그에 동일한 이벤트 등록하기</h3>
+
+    <ul id="test">
+        <li>태그1</li>
+        <li>태그2</li>
+        <li>태그3</li>
+    </ul>
+
+    <script>
+        // 이벤트 위임 1 - js
+        // var tag = document.querySelectorAll("#test li");
+        
+        // for(var i=0; i<tag.length; i++){
+        //     tag[i].onclick = function() {
+        //         alert(1);
+        //     }
+        // }
+
+        // // 이벤트 위임 1 - jquery
+        // $("#test li").click(function() {
+        //     console.log($(this).html());
+        // })
+
+        // 이벤트 위임 2 - js
+        var test = document.getElementById("test");
+        test.onclick = function() {
+            if(event.target.tagName != "LI") return;
+            console.log(1);
+        }
+
+        // 이벤트 위임 2 - jquery
+        $("#test").on("click", "li", function() {
+            console.log($(this).html());
+        })
+
+        // on 방식으로 이벤트 위임 등록
+        $(document).ready(function() {
+
+            $("#box").on("click", "a", function() {
+                event.preventDefault();
+                alert("실행됨");
+            })
+        })
+
+        $(document).ready(function() {
+
+            var str = "";
+            str += "<a href='#'>태그1</a>";
+            str += "<a href='#'>태그2</a>";
+            str += "<a href='#'>태그3</a>";
+    
+            $("#box").html(str);
+        })
+    </script>
+
+    <div id="box"></div>
+
+</body>
+</html>

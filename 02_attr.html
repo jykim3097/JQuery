@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr 함수</title>
+    
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <h3>엘리먼트 속성 변경 attr</h3>
+
+    <input type="text" id="test1" readonly>
+    <img src="#" class="test2">
+    <img src="#" class="test3" width="" height="">
+
+    <script>
+        // 엘리먼트의 속성 값 확인 -js
+        console.log(document.getElementById("test1").id);
+
+        // 엘리먼트의 속성 값 확인 -jquery
+        console.log($("#test1").attr("id"));
+        console.log($("#test1").attr("readonly"));
+
+        // jquery 엘리먼트의 값 변경방법 1 - 변경할 값이 한 개일 때
+        $(".test2").attr("src", "img/profile.png");
+
+        // jquery 엘리먼트의 값 변경방법 2 - 변경할 값이 여러 개일 때
+        // 키값 형태로 한 번에 여러 값을 변경할 수 있다.
+        $(".test3").attr({
+            src : "img/profile.png",
+            width : 50,
+            height : 50,
+            alt : "hell로월드"
+        })
+
+
+    </script>
+
+</body>
+</html>

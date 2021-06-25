@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 함수</title>
+
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+
+</head>
+<body>
+
+    <h3>스타일 변경 css()</h3>
+
+    <ul class="test">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+
+    <script>
+        // li의 모든 백그라운드 변경 - js
+        document.querySelectorAll("li").forEach(function(value, index, node) {
+            value.style.backgroundColor = "red";
+        })
+
+        // li의 모든 백그라운드 변경 - jquery
+        $("li").css("color", "white");
+
+        // li의 css 값 확인
+        console.log($("li").css("backgroundColor"));
+
+        // css 속성을 {} 형식으로 한 번에 변경할 수 있다.
+        $(".box").css({
+            backgroundColor : "skyblue",
+            display : "inline-block",
+            width : "50px",
+            height : "50px",
+            border : "1px solid #777",
+            margin : "5px"
+        })
+
+    </script>
+
+</body>
+</html>

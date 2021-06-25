@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다양한 이벤트 함수</title>
+        
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <script>
+        $(document).ready(function() {
+
+            // click 이벤트 등록
+            $("#btn").click(function() {
+                alert("클릭됨~");
+            })
+
+            // keyup 이벤트 등록
+            $("#tag").keyup(function() {
+                 $("#tag").css("backgroundColor", "skyblue");
+            })
+
+            // change 이벤트 등록
+            $("#sel").change(function() {
+                console.log($("#sel").val());
+            })
+        })
+
+    </script>
+
+    <button type="button" id="btn">이벤트 등록</button>
+    <input type="text" id="tag">
+
+    <select id="sel">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+</body>
+</html>
