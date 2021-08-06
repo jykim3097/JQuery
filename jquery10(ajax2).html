@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+                    
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <button type="button" id="ajaxBtn">ajax 요청</button>
+
+    <script>
+
+        $("#ajaxBtn").click( function() {
+            $.ajax({
+                type : "post",
+                url : "http://localhost:8181/myweb/getXML",
+                dataType : "xml", // (xml 형식으로 주세요) 생략 가능
+                contentType : "application/json", // 보내는 데이터 타입
+                data : JSON.stringify({"name" : "이순신", "age" : "40"}),
+                success : function(data) {
+                    console.log(data);
+                },
+                error : function(status, error) {
+                    console.log(status, error);
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

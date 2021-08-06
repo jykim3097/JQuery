@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+                
+    <!-- jquery 파일 참조 -->
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <button type="button" id="ajaxBtn">ajax 요청</button>
+
+    <script>
+
+    $("#ajaxBtn").click(function() {
+        // jquery ajax 함수
+        $.ajax({
+            // 키 : 값
+            type : "post", //요청방식
+            url : "http://localhost:8181/myweb/getAjax", // 서버가 다르면 http를 포함한 전체 주소를 넣는다
+            dataType : "json", // 요청 데이터 형식 (xml, json 등), 생략 가능
+            contentType : "application/json", // json 형식으로 보낸다는 뜻, 정의된 타입이 있다
+            data : JSON.stringify({"name" : "홍길동", "age" : "20"}), // 네트워크에선 객체를 전달할 수 없기 때문에 문자열로 바꿔서 보낸다
+            success : function(data) { // 성공 시 돌려받을 콜백함수
+                console.log(data);
+            },
+            error : function(status, error) { // 실패 시 결과를 돌려받을 콜백함수
+                console.log(status, error);
+            }
+        })
+    })
+
+    </script>
+</body>
+</html>
